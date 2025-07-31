@@ -1,0 +1,64 @@
+/* Custom animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Hero section styles */
+.hero-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+}
+
+/* Card styles */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Team member card styles */
+.team-member-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member-card .social-links {
+  transition: transform 0.3s ease;
+  transform: translateY(100%);
+}
+
+.team-member-card:hover .social-links {
+  transform: translateY(0);
+}
+
+/* Logo styles */
+.logo {
+  height: 40px;
+  width: auto;
+}

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#0f172a" stroke="#4f46e5" stroke-width="5" />
+  
+  <!-- HU Letters -->
+  <g fill="#f59e0b">
+    <!-- H -->
+    <path d="M55,50 v60 h10 v-25 h30 v25 h10 v-60 h-10 v25 h-30 v-25 z" />
+    <!-- U -->
+    <path d="M115,50 v45 q0,15 15,15 h15 q15,0 15,-15 v-45 h-10 v45 q0,5 -5,5 h-15 q-5,0 -5,-5 v-45 z" />
+  </g>
+  
+  <!-- Binary Code Around Circle -->
+  <g fill="#4f46e5" font-family="monospace" font-size="8">
+    <text x="20" y="30" transform="rotate(-60 20,30)">10110</text>
+    <text x="10" y="70" transform="rotate(-30 10,70)">01001</text>
+    <text x="10" y="120" transform="rotate(0 10,120)">11010</text>
+    <text x="20" y="170" transform="rotate(30 20,170)">00101</text>
+    <text x="70" y="190" transform="rotate(60 70,190)">10011</text>
+    <text x="130" y="190" transform="rotate(120 130,190)">01100</text>
+    <text x="180" y="170" transform="rotate(150 180,170)">11001</text>
+    <text x="190" y="120" transform="rotate(180 190,120)">00110</text>
+    <text x="180" y="70" transform="rotate(210 180,70)">10101</text>
+    <text x="130" y="10" transform="rotate(240 130,10)">01010</text>
+  </g>
+  
+  <!-- Network Nodes -->
+  <g>
+    <!-- Connection Lines -->
+    <path d="M100,100 L70,70" stroke="#4f46e5" stroke-width="1.5" />
+    <path d="M100,100 L130,70" stroke="#4f46e5" stroke-width="1.5" />
+    <path d="M100,100 L70,130" stroke="#4f46e5" stroke-width="1.5" />
+    <path d="M100,100 L130,130" stroke="#4f46e5" stroke-width="1.5" />
+    <path d="M100,100 L100,60" stroke="#4f46e5" stroke-width="1.5" />
+    <path d="M100,100 L100,140" stroke="#4f46e5" stroke-width="1.5" />
+    <path d="M100,100 L60,100" stroke="#4f46e5" stroke-width="1.5" />
+    <path d="M100,100 L140,100" stroke="#4f46e5" stroke-width="1.5" />
+    
+    <!-- Nodes -->
+    <circle cx="100" cy="100" r="8" fill="#f59e0b" />
+    <circle cx="70" cy="70" r="4" fill="#f59e0b" />
+    <circle cx="130" cy="70" r="4" fill="#f59e0b" />
+    <circle cx="70" cy="130" r="4" fill="#f59e0b" />
+    <circle cx="130" cy="130" r="4" fill="#f59e0b" />
+    <circle cx="100" cy="60" r="4" fill="#f59e0b" />
+    <circle cx="100" cy="140" r="4" fill="#f59e0b" />
+    <circle cx="60" cy="100" r="4" fill="#f59e0b" />
+    <circle cx="140" cy="100" r="4" fill="#f59e0b" />
+  </g>
+</svg>
