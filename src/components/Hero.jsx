@@ -231,22 +231,21 @@ const Hero = () => {
                 >
                   {/* Shield inner */}
                   <div className="w-56 h-56 bg-primary-900 rounded-full flex items-center justify-center">
-                    {/* Code brackets */}
-                    <div className="text-5xl font-mono font-bold text-secondary flex items-center space-x-4">
-                      <motion.span 
-                        animate={{ x: [-5, 0, -5] }}
-                        transition={{ repeat: Infinity, duration: 2 }}
-                      >&lt;</motion.span>
-                      <motion.span 
-                        className="text-accent"
-                        animate={{ opacity: [0.7, 1, 0.7] }}
-                        transition={{ repeat: Infinity, duration: 1.5 }}
-                      >HU</motion.span>
-                      <motion.span 
-                        animate={{ x: [5, 0, 5] }}
-                        transition={{ repeat: Infinity, duration: 2 }}
-                      >&gt;</motion.span>
-                    </div>
+                    {/* HU Float SVG */}
+                    <motion.img 
+                      src="/images/hu-float.png" 
+                      alt="HU Logo" 
+                      className="w-50 h-44"
+                      animate={{ 
+                        scale: [1, 1.05, 1],
+                        rotate: [0, 2, 0, -2, 0]
+                      }}
+                      transition={{ 
+                        repeat: Infinity, 
+                        duration: 4,
+                        ease: "easeInOut" 
+                      }}
+                    />
                   </div>
                 </motion.div>
                 
