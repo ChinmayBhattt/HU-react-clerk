@@ -57,28 +57,52 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-primary to-gray-900">
-      {/* Animated background elements */}
+    <section className="hero-gradient py-16 md:py-24 min-h-screen flex items-center">
+      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full">
-          {/* Animated gradient circles */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary opacity-20 rounded-full filter blur-3xl animate-blob"></div>
-          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-accent opacity-20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-primary opacity-20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
-          
-          {/* Code matrix background */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="h-full w-full flex flex-wrap text-xs text-secondary/50 font-mono">
-              {Array.from({ length: 20 }).map((_, i) => (
-                <div key={i} className="w-1/10 opacity-30">
-                  {Array.from({ length: 30 }).map((_, j) => (
-                    <div key={j}>{Math.random() > 0.5 ? '1' : '0'}</div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* Animated Gradient Circle 1 */}
+        <motion.div 
+          className="absolute -top-20 -left-20 w-96 h-96 bg-secondary opacity-10 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.15, 0.1]
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 8,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Animated Gradient Circle 2 */}
+        <motion.div 
+          className="absolute top-1/3 -right-20 w-80 h-80 bg-accent opacity-10 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.1, 0.2, 0.1]
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 10,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Animated Code Pattern Background */}
+        <motion.div 
+          className="code-pattern"
+          animate={{
+            backgroundPosition: ['0% 0%', '100% 100%']
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 20,
+            ease: "linear"
+          }}
+        />
+        
+        {/* Digital Grid Lines */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -108,8 +132,8 @@ const Hero = () => {
               <span className="mr-2">✨</span> India's Premier Hackathon Community
             </motion.div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text">
-              Hacker's Unity
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+              <span className="gradient-text">Hacker's Unity</span>
             </h1>
             
             <motion.p 
@@ -190,19 +214,68 @@ const Hero = () => {
             }}
             className="lg:w-1/2 relative"
           >
-            <div className="relative z-10 glow-effect">
-              <img
-                src="/images/hero-illustration.svg"
-                alt="Hacker's Unity Community"
-                className="w-full h-auto drop-shadow-2xl"
-              />
-            </div>
-            
-            {/* Floating elements around the illustration */}
             <motion.div 
-              className="absolute top-10 right-10 bg-white/10 backdrop-blur-sm p-3 rounded-lg shadow-xl"
+              className="relative z-10"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 4, 
+                ease: "easeInOut" 
+              }}>
+              <div className="w-full h-80 flex items-center justify-center relative">
+                {/* Shield */}
+                <motion.div 
+                  className="w-64 h-64 border-4 border-secondary rounded-full flex items-center justify-center relative glow-pulse"
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                >
+                  {/* Shield inner */}
+                  <div className="w-56 h-56 bg-primary-900 rounded-full flex items-center justify-center">
+                    {/* Code brackets */}
+                    <div className="text-5xl font-mono font-bold text-secondary flex items-center space-x-4">
+                      <motion.span 
+                        animate={{ x: [-5, 0, -5] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                      >&lt;</motion.span>
+                      <motion.span 
+                        className="text-accent"
+                        animate={{ opacity: [0.7, 1, 0.7] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                      >HU</motion.span>
+                      <motion.span 
+                        animate={{ x: [5, 0, 5] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                      >&gt;</motion.span>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                {/* Animated particles */}
+                <motion.div 
+                  className="absolute top-0 right-0 w-4 h-4 rounded-full bg-accent"
+                  animate={{ 
+                    y: [0, 20, 0],
+                    opacity: [0.2, 1, 0.2]
+                  }}
+                  transition={{ repeat: Infinity, duration: 3 }}
+                />
+                <motion.div 
+                  className="absolute bottom-10 left-10 w-3 h-3 rounded-full bg-secondary"
+                  animate={{ 
+                    y: [0, -15, 0],
+                    opacity: [0.3, 1, 0.3]
+                  }}
+                  transition={{ repeat: Infinity, duration: 2.5 }}
+                />
+              </div>
+            </motion.div>
+            
+            {/* Floating code elements */}
+            <motion.div 
+              className="absolute top-5 right-10 bg-secondary/10 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-secondary/30"
               animate={{ 
                 y: [0, -10, 0],
+                rotate: [0, 2, 0]
               }}
               transition={{ 
                 repeat: Infinity, 
@@ -210,13 +283,14 @@ const Hero = () => {
                 ease: "easeInOut" 
               }}
             >
-              <div className="text-white font-bold">{'<Code/>'}</div>
+              <div className="text-secondary font-mono font-bold">{'<Code/>'}</div>
             </motion.div>
             
             <motion.div 
-              className="absolute bottom-20 left-10 bg-white/10 backdrop-blur-sm p-3 rounded-lg shadow-xl"
+              className="absolute bottom-20 left-5 bg-accent/10 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-accent/30"
               animate={{ 
                 y: [0, 10, 0],
+                x: [0, 5, 0]
               }}
               transition={{ 
                 repeat: Infinity, 
@@ -224,7 +298,29 @@ const Hero = () => {
                 ease: "easeInOut" 
               }}
             >
-              <div className="text-white font-bold">{'{ }'}</div>
+              <div className="text-accent font-mono font-bold">{'{ }'}</div>
+            </motion.div>
+            
+            {/* Additional floating element */}
+            <motion.div 
+              className="absolute top-1/2 right-5 bg-white/5 backdrop-blur-sm p-4 rounded-lg shadow-xl border border-white/10"
+              animate={{ 
+                rotate: [0, 5, 0, -5, 0],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 5,
+                ease: "easeInOut" 
+              }}
+            >
+              <div className="text-white font-mono text-sm">
+                <div className="text-secondary">function</div>
+                <div className="text-white">hackersUnity()</div>
+                <div className="text-white">{`{`}</div>
+                <div className="text-accent ml-2">return "success";</div>
+                <div className="text-white">{`}`}</div>
+              </div>
             </motion.div>
           </motion.div>
         </div>

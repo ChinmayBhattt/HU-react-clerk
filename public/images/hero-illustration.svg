@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <!-- Dark background -->
+  <rect width="500" height="500" fill="#0F172A" rx="20" ry="20" />
+  
+  <!-- Shield outline -->
+  <path d="M250 100 L350 150 L350 250 C350 300 300 350 250 380 C200 350 150 300 150 250 L150 150 Z" 
+        fill="none" stroke="#00A3FF" stroke-width="8" />
+  
+  <!-- Code brackets -->
+  <path d="M220 200 L200 250 L220 300" stroke="#00A3FF" stroke-width="8" fill="none" />
+  <path d="M280 200 L300 250 L280 300" stroke="#00A3FF" stroke-width="8" fill="none" />
+  
+  <!-- Hands (simplified) -->
+  <path d="M150 250 C120 240 100 260 120 280 C140 300 160 270 150 250" fill="#FF5722" />
+  <path d="M350 250 C380 240 400 260 380 280 C360 300 340 270 350 250" fill="#FF5722" />
+  
+  <!-- Text -->
+  <text x="250" y="420" font-family="Arial, sans-serif" font-size="32" font-weight="bold" 
+        text-anchor="middle" fill="#00A3FF">Hacker's Unity</text>
+  
+  <!-- Decorative code particles -->
+  <circle cx="150" cy="150" r="5" fill="#FF5722" />
+  <circle cx="350" cy="150" r="5" fill="#FF5722" />
+  <circle cx="200" cy="350" r="5" fill="#00A3FF" />
+  <circle cx="300" cy="350" r="5" fill="#00A3FF" />
+  
+  <!-- Additional code symbols -->
+  <text x="180" y="180" font-family="monospace" font-size="20" fill="#FF5722">{</text>
+  <text x="320" y="180" font-family="monospace" font-size="20" fill="#FF5722">}</text>
+  <text x="230" y="250" font-family="monospace" font-size="24" fill="#FFFFFF">HU</text>
+</svg>

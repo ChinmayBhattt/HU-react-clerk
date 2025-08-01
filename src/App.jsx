@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import './App.css'
-import { SignedIn, SignedOut } from "@clerk/clerk-react"
+import { SignedIn, SignedOut } from "@clerk/clerk-react"  
 
 // Import components
 import Navbar from './components/Navbar'

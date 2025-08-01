@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { SignInButton, SignOutButton, useAuth } from '@clerk/clerk-react';
+import { SignInButton, SignOutButton, UserButton, useAuth } from '@clerk/clerk-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -119,6 +119,7 @@ const Navbar = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-accent rounded-full blur opacity-70 group-hover:opacity-100 transition duration-300"></div>
                 <div className="relative h-8 w-8 bg-primary rounded-full flex items-center justify-center border-2 border-secondary">
                   <span className="text-accent font-bold text-xs">HU</span>
+              
                 </div>
               </div>
               <span className="text-2xl font-bold gradient-text">Hacker's Unity</span>
@@ -132,30 +133,38 @@ const Navbar = () => {
           >
             {navLinks.map((link) => (
               <motion.div key={link.to} variants={linkVariants}>
-                <Link to={link.to}>
-                  <motion.a 
-                    className="text-gray-200 hover:text-white cursor-pointer relative group"
+                <Link 
+                  to={link.to}
+                  className="text-gray-200 hover:text-white cursor-pointer relative group"
+                >
+                  <motion.span 
                     whileHover="hover"
                     whileTap="tap"
                   >
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
-                  </motion.a>
+                  </motion.span>
                 </Link>
               </motion.div>
             ))}
 
             {isSignedIn ? (
-              <SignOutButton>
-                <motion.button 
-                  className="btn btn-secondary btn-sm"
-                  variants={buttonVariants}
-                  whileHover="hover"
-                  whileTap="tap"
-                >
-                  Sign Out
-                </motion.button>
-              </SignOutButton>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <UserButton 
+                  afterSignOutUrl="/"
+                  appearance={{
+                    elements: {
+                      userButtonAvatarBox: {
+                        width: '2.5rem',
+                        height: '2.5rem'
+                      }
+                    }
+                  }}
+                />
+              </motion.div>
             ) : (
               <SignInButton>
                 <motion.button 
@@ -238,15 +247,19 @@ const Navbar = () => {
                 variants={mobileLinkVariants}
               >
                 {isSignedIn ? (
-                  <SignOutButton>
-                    <motion.button 
-                      className="btn btn-secondary btn-sm w-full"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Sign Out
-                    </motion.button>
-                  </SignOutButton>
+                  <div className="flex justify-center">
+                    <UserButton 
+                      afterSignOutUrl="/"
+                      appearance={{
+                        elements: {
+                          userButtonAvatarBox: {
+                            width: '2.5rem',
+                            height: '2.5rem'
+                          }
+                        }
+                      }}
+                    />
+                  </div>
                 ) : (
                   <SignInButton>
                     <motion.button 

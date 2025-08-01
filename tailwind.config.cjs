@@ -22,7 +22,7 @@ module.exports = {
           950: '#020617',
         },
         secondary: {
-          DEFAULT: '#4f46e5', // Indigo
+          DEFAULT: '#00A3FF', // Bright blue from logo
           50: '#eef2ff',
           100: '#e0e7ff',
           200: '#c7d2fe',
@@ -36,7 +36,7 @@ module.exports = {
           950: '#1e1b4b',
         },
         accent: {
-          DEFAULT: '#f59e0b', // Amber
+          DEFAULT: '#FF5722', // Orange from logo
           50: '#fffbeb',
           100: '#fef3c7',
           200: '#fde68a',
